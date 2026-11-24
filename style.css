@@ -35,9 +35,14 @@
 }
 
 .main {
-    background-color: yellow;
+    background-color: #E2E8F0;
     grid-column: 2 / 3;
     grid-row: 2 / 3;
+    
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+
+    padding: 2em;
 }
 
 .sidebar,
@@ -232,4 +237,52 @@ button:hover {
 
     width: 8em;
     height: 3em;
+}
+
+.card-icons .icon svg {
+    fill: black;
+    width: 1.5em;
+}
+
+.main-article-col {
+    display: grid;
+    gap: 1em;
+}
+
+
+.card-container {
+    display: grid; 
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2em;
+}
+
+.article-card {
+    background-color: #FFFFFF;
+    border-radius: 0.5em;
+    padding: 1em;
+    border-left: 0.5em solid #F0B429;
+
+    display: grid;
+    grid-template-rows: auto;
+}
+
+.header, 
+.article-card {
+    box-shadow: 1px 8px 11px -4px rgba(0,0,0,0.69);
+}
+
+.card-title {
+    font-size: 1em;
+}
+
+.card-description {
+    font-size: 1em;
+    color: #6f6f6f
+}
+
+.card-icons {
+    display: grid;
+    grid-template-columns: repeat(3,auto);
+    justify-content: end;
+    gap: 2em;
 }
