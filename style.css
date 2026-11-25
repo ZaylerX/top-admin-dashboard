@@ -12,7 +12,6 @@
     grid-template-columns: 1fr 3fr;
     grid-template-rows: 1fr 3fr;
     height: 100vh;
-    width: 100vw;
 }
 
 .sidebar {
@@ -27,13 +26,6 @@
     padding-left: 5%;
 }
 
-
-.header {
-    background-color: #FFFFFF;
-    grid-column: 2 / 3;
-    grid-row: 1 / 2;
-}
-
 .main {
     background-color: #E2E8F0;
     grid-column: 2 / 3;
@@ -41,6 +33,7 @@
     
     display: grid;
     grid-template-columns: 2fr 1fr;
+    gap: 2em;
 
     padding: 2em;
 }
@@ -96,7 +89,6 @@ li a .icon {
 
 .sidebar .icon svg {
     width: 1.5em;
-    fill: white;
 }
 
 img {
@@ -106,17 +98,20 @@ img {
 .header {
     display: grid;
     grid-template-rows: 1fr 1fr;
+
+    background-color: #FFFFFF;
+    grid-column: 2 / 3;
+    grid-row: 1 / 2;
 }
 
 .upper-row {
     display: grid;
     grid-template-columns: 2fr 1fr;
-    justify-content: center;
 }
 
 .lower-row {
     display: grid;
-    grid-template-columns: auto;
+    grid-template-columns: auto 1fr;
     margin-bottom: 1em;
 }
 
@@ -161,12 +156,11 @@ button:hover {
 }
 
 .bell svg{
-    border: none;
-    background-color: #FFFFFF;
     width: 1.5em;
 }
 
-.profile-picture {
+.profile-picture,
+.follower-propic img {
     border-radius: 50px;
     width: 3em;
 }
@@ -178,10 +172,6 @@ button:hover {
 .header .icon svg {
     width: 1.5em;
     fill: black;
-}
-
-.button-bar {
-    grid-column: 3 / 4;
 }
 
 .intro-bar {
@@ -206,13 +196,13 @@ button:hover {
 }
 
 .intro-text {
-    align-self: flex-end;
+    align-self: end;
     font-size: 1em;
     font-weight: bold;
 }
 
 .profile-name {
-    align-self: flex-start;
+    align-self: start;
     font-size: 1.6em;
     font-weight: bold;
 }
@@ -247,6 +237,7 @@ button:hover {
 .main-article-col {
     display: grid;
     gap: 1em;
+    grid-template-rows: auto 1fr;
 }
 
 
@@ -254,6 +245,7 @@ button:hover {
     display: grid; 
     grid-template-columns: repeat(2, 1fr);
     gap: 2em;
+    grid-auto-rows: 1fr;
 }
 
 .article-card {
@@ -286,3 +278,82 @@ button:hover {
     justify-content: end;
     gap: 2em;
 }
+
+.main-side-col {
+    display: grid;
+    gap: 1em;
+    grid-template-rows: auto auto auto 1fr;
+}
+
+.announcement-box {
+    background-color: #FFFFFF;
+    box-shadow: 1px 8px 11px -4px rgba(0,0,0,0.69);
+    border-radius: 10px;
+
+    display: grid;
+    grid-template-rows: repeat(3, 1fr);
+    justify-items: center;
+    align-items: center;
+}
+
+.single-announcement {
+    width: 90%;
+    padding: 1.5em 0;
+
+}
+
+.announcement-title {
+    font-size: 16px;
+}
+
+.announcement-description {
+    font-size: 14px;
+    color: #6f6f6f;
+}
+
+.single-announcement:nth-child(1),
+.single-announcement:nth-child(2) {
+    border-bottom: solid 1px #686868;
+}
+
+.follower-box {
+    background-color: #FFFFFF;
+    box-shadow: 1px 8px 11px -4px rgba(0,0,0,0.69);
+    border-radius: 10px;
+
+    display: grid;
+    grid-template-rows: repeat(4, 1fr);
+    align-items: center;
+    gap: 10px;
+}
+
+.single-follower {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    padding: 1em 1em 0 2em;
+}
+
+.single-follower:last-child {
+    padding-bottom: 1em;
+}
+
+.follower-propic {
+    grid-column: 1 / 2;
+    grid-row: 1 / 3;
+    padding-right: 15px;
+}
+
+.follower-tag,
+.follower-name {
+    grid-column: 2 / 3;
+}
+
+.follower-tag {
+    align-self: end;
+}
+
+.follower-name {
+    align-self: start;
+    color: #6f6f6f
+}
+
